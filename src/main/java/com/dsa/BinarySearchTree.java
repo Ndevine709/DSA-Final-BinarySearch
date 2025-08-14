@@ -7,7 +7,6 @@ public class BinarySearchTree {
         root = null;
     }
 
-    // Insert a value into the BST
     public void insert(int value) {
         root = insertRec(root, value);
     }
@@ -26,12 +25,10 @@ public class BinarySearchTree {
         return node;
     }
 
-    // Get the root node
     public BinaryNode getRoot() {
         return root;
     }
 
-    // Inorder traversal (left -> root -> right)
     public void inorder() {
         inorderRec(root);
     }

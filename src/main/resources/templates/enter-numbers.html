@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree Builder</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Binary Search Tree Builder</h1>
+        
+        <div class="instructions">
+            <strong>Instructions:</strong> Enter a series of numbers separated by commas to build a binary search tree.
+            <div class="example">
+                Example: 11, 22, 36, 49, 51, 65
+            </div>
+        </div>
+
+        <form action="/process-numbers" method="post">
+            <div class="form-group">
+                <label for="numbers">Enter Numbers (comma-separated):</label>
+                <input 
+                    type="text" 
+                    id="numbers" 
+                    name="numbers" 
+                    placeholder="e.g., 11, 22, 36, 49, 51, 65"
+                    required
+                    pattern="[0-9,\s]+"
+                    title="Please enter only numbers separated by commas"
+                >
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Build Tree</button>
+                <a href="/previous-trees" class="btn btn-secondary">Show Previous Trees</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

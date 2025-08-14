@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST Result - Binary Search Tree Builder</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Binary Search Tree Result</h1>
+        
+        <div class="success-message">
+            Binary Search Tree successfully built and saved to database!
+        </div>
+
+        <div class="result-section input-section">
+            <div class="section-title">Input Numbers:</div>
+            <div class="numbers-display" th:text="${numbers}"></div>
+        </div>
+
+        <div class="result-section json-section">
+            <div class="section-title">Tree Structure (JSON):</div>
+            <div class="json-display" th:text="${treeJson}"></div>
+        </div>
+
+        <div class="button-group">
+            <a href="/enter-numbers" class="btn btn-primary">Build Another Tree</a>
+            <a href="/previous-trees" class="btn btn-secondary">View All Trees</a>
+        </div>
+    </div>
+</body>
+</html>

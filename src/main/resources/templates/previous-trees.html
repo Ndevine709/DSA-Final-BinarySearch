@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Trees - Binary Search Tree Builder</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Previous Binary Search Trees</h1>
+        
+        <div class="header-section">
+            <div class="tree-count">
+                <strong>Total Trees Built:</strong> 
+                <span th:text="${#lists.size(trees)}">0</span>
+            </div>
+        </div>
+
+        <div th:if="${#lists.isEmpty(trees)}" class="no-trees">
+            <p>No trees have been built yet.</p>
+            <p>Build your first binary search tree to get started!</p>
+        </div>
+
+        <div th:each="tree : ${trees}" class="tree-item">
+            <div class="input-numbers">
+                <div class="input-label">Input Numbers:</div>
+                <div class="numbers-display" th:text="${tree.userInputs}"></div>
+            </div>
+            
+            <div class="tree-json">
+                <div class="json-label">Tree Structure (JSON):</div>
+                <div class="json-display" th:text="${tree.treeJson}"></div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a href="/enter-numbers" class="btn btn-primary">Build New Tree</a>
+        </div>
+    </div>
+</body>
+</html>

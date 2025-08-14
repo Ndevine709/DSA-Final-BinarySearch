@@ -14,17 +14,14 @@ public class TreeStructure {
 
     private String userInputs;
 
-    // Default constructor required by JPA
     public TreeStructure() {
     }
 
-    // Constructor with parameters
     public TreeStructure(String treeJson, String userInputs) {
         this.treeJson = treeJson;
         this.userInputs = userInputs;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -49,21 +46,10 @@ public class TreeStructure {
         this.userInputs = userInputs;
     }
 
-    // Helper method to get formatted user inputs
     public String getFormattedUserInputs() {
         if (userInputs != null && userInputs.startsWith("[") && userInputs.endsWith("]")) {
             return userInputs.substring(1, userInputs.length() - 1);
         }
         return userInputs;
-    }
-
-    // Override toString for debugging
-    @Override
-    public String toString() {
-        return "TreeStructure{" +
-                "id=" + id +
-                ", userInputs='" + userInputs + '\'' +
-                ", treeJson='" + (treeJson != null ? treeJson.substring(0, Math.min(100, treeJson.length())) + "..." : "null") + '\'' +
-                '}';
     }
 }
